@@ -1,0 +1,38 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for tracking member statuses and providing server insights",
+  "main": "index.ts",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && tsc-watch --onSuccess \"npm run build:cjs && npm run build:esm\"",
+    "build:cjs": "tsc --module commonjs --outDir dist",
+    "build:esm": "tsc --module esnext --outDir dist/esm",
+    "start:dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
+    "start": "node dist/index.js",
+    "lint": "eslint src//.ts",
+    "format": "prettier --write src//.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coslynx/discord-member-status-tracker.git"
+  },
+  "author": "Coslynx",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "@types/discord.js": "^14.11.2",
+    "@types/mongoose": "^5.11.97",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "discord.js": "^14.11.1",
+    "dotenv": "^16.3.1",
+    "mongoose": "^7.0.3"
+  }
+}
